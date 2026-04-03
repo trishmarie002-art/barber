@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J 2Blurry | Precision Barbering</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .text-red-primary { color: #ff0000; }
+        .bg-red-primary { background-color: #ff0000; }
+        .border-red-primary { border-color: #ff0000; }
+
+        /* Video Overlay */
+        .video-docker video {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+        }
+        .video-overlay {
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        /* Custom Button Animation */
+        .cta-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 0, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
+        }
+        .cta-button:hover {
+            transform: scale(1.05);
+            background-color: #cc0000;
+        }
+
+        nav {
+            transition: background 0.5s ease;
+        }
+        .nav-scrolled {
+            background: rgba(0, 0, 0, 0.95);
+            border-bottom: 2px solid #ff0000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 px-6 py-4 flex justify-between items-center transition-all duration-300">
+        <div class="text-2xl font-black tracking-tighter">J <span class="text-red-primary">2BLURRY</span></div>
+        <div class="hidden md:flex space-x-8 font-bold uppercase text-sm tracking-widest">
+            <a href="#home" class="hover:text-red-primary transition">Home</a>
+            <a href="#services" class="hover:text-red-primary transition">Services</a>
+            <a href="#about" class="hover:text-red-primary transition">About</a>
+            <a href="#contact" class="hover:text-red-primary transition">Contact</a>
+        </div>
+        <a href="#booking" class="bg-red-primary text-white px-6 py-2 rounded-full font-bold uppercase text-xs hover:bg-white hover:text-red-primary transition duration-300">Book Now</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
+            <!-- REPLACE 'hero-video.mp4' with the actual video path -->
+            <video class="absolute object-cover" autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-barber-cutting-hair-with-clippers-41135-large.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay absolute top-0 left-0 w-full h-full"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4" data-aos="zoom-in" data-aos-duration="1000">
+            <h1 class="text-6xl md:text-9xl font-black uppercase leading-none mb-4">
+                Stay <span class="text-red-primary">Sharp</span>
+            </h1>
+            <p class="text-lg md:text-2xl mb-8 font-light tracking-wide max-w-2xl mx-auto">
+                Precision fades, crisp lineups, and premium grooming by <span class="font-bold">Jacob</span>.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#booking" class="cta-button bg-red-primary text-white text-xl font-black py-4 px-10 rounded-md uppercase tracking-tighter">
+                    Book Your Slot <i class="fas fa-calendar-alt ml-2"></i>
+                </a>
+                <a href="tel:2105088599" class="bg-white text-black text-xl font-black py-4 px-10 rounded-md uppercase tracking-tighter hover:bg-gray-200 transition">
+                    Call Jacob <i class="fas fa-phone ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-6 bg-black">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-6xl font-black text-center mb-16 uppercase" data-aos="fade-up">
+                The <span class="text-red-primary">Menu</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="border-2 border-gray-800 p-8 hover:border-red-primary transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-cut text-4xl text-red-primary mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-2 uppercase">Precision Fade</h3>
+                    <p class="text-gray-400 mb-4">Skin fade, taper, or drop fade. Clean blends every time.</p>
+                    <div class="text-3xl font-black text-red-primary">$30+</div>
+                </div>
+                <!-- Service 2 -->
+                <div class="border-2 border-gray-800 p-8 hover:border-red-primary transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-razor text-4xl text-red-primary mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-2 uppercase">Beard Sculpt</h3>
+                    <p class="text-gray-400 mb-4">Detailing, shaping, and hot towel finish for the perfect beard.</p>
+                    <div class="text-3xl font-black text-red-primary">$20+</div>
+                </div>
+                <!-- Service 3 -->
+                <div class="border-2 border-gray-800 p-8 hover:border-red-primary transition-all duration-300 group" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-star text-4xl text-red-primary mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-2 uppercase">The Full Blur</h3>
+                    <p class="text-gray-400 mb-4">Haircut, beard trim, and a signature styling finish.</p>
+                    <div class="text-3xl font-black text-red-primary">$45+</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-zinc-900">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="relative" data-aos="fade-right">
+                <div class="absolute -top-4 -left-4 w-full h-full border-4 border-red-primary z-0"></div>
+                <img src="https://images.unsplash.com/photo-1503951906201-9d5977b89a5d?auto=format&fit=crop&q=80&w=800" alt="Barber" class="relative z-10 grayscale hover:grayscale-0 transition duration-500">
+            </div>
+            <div data-aos="fade-left">
+                <h2 class="text-4xl md:text-6xl font-black uppercase mb-6">Meet <span class="text-red-primary">Jacob</span></h2>
+                <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                    At <span class="font-bold text-white">J 2Blurry</span>, it's not just about a haircut—it's about the confidence that comes with a precision look. Jacob specializes in high-detail fading and modern styles, ensuring every client leaves the chair looking 100%.
+                </p>
+                <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                    Dedicated to the craft, focused on the detail. Whether you need a quick cleanup or a complete transformation, Jacob has you covered.
+                </p>
+                <a href="#booking" class="inline-block border-2 border-red-primary text-red-primary font-bold py-3 px-8 hover:bg-red-primary hover:text-white transition duration-300 uppercase">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking CTA Section -->
+    <section id="booking" class="py-24 px-6 bg-black text-center">
+        <div class="max-w-4xl mx-auto" data-aos="zoom-in">
+            <h2 class="text-5xl md:text-7xl font-black uppercase mb-8 leading-tight">Ready to get <br><span class="text-red-primary">Blurry?</span></h2>
+            <p class="text-xl text-gray-400 mb-12">Don't wait for the weekend. Secure your spot now.</p>
+            
+            <!-- INTEGRATION: Replace # with a booking link like Calendly, Squire, or Acuity -->
+            <a href="https://calendly.com" target="_blank" class="cta-button inline-block bg-red-primary text-white text-2xl font-black py-5 px-12 rounded-md uppercase tracking-tighter">
+                Book Your Appointment Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer/Contact -->
+    <footer id="contact" class="py-12 px-6 bg-zinc-950 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-3xl font-black tracking-tighter">J <span class="text-red-primary">2BLURRY</span></div>
+            
+            <div class="flex flex-col items-center md:items-end">
+                <p class="text-gray-400 uppercase tracking-widest text-sm mb-2">Contact Jacob</p>
+                <a href="tel:2105088599" class="text-2xl font-bold hover:text-red-primary transition">210-508-8599</a>
+            </div>
+        </div>
+        <div class="text-center text-gray-600 text-xs mt-12 uppercase tracking-widest">
+            &copy; 2026 J 2Blurry Barbering. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Animations
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
